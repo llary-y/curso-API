@@ -1,4 +1,4 @@
-package br.com.praticando.api.repository;
+package br.com.praticando.api.repositories;
 
 import br.com.praticando.api.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;

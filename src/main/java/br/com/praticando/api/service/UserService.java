@@ -1,9 +1,7 @@
-package br.com.praticando.api.services;
+package br.com.praticando.api.service;
 
 import br.com.praticando.api.domain.User;
-import org.springframework.stereotype.Service;
 
-@Service
 public interface UserService {
 
     User findById(Integer id);
