@@ -3,6 +3,7 @@ package br.com.praticando.api.service.impl;
 import br.com.praticando.api.domain.User;
 import br.com.praticando.api.domain.dto.UserDTO;
 import br.com.praticando.api.repositories.UserRepository;
+import br.com.praticando.api.service.exceptions.ObjectNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -58,6 +59,18 @@ class UserServiceImplTest {
         assertEquals(PASSWORD, response.getPassword());
     }
 
+    @Test
+    void whenFindByIdThenReturnAnObjectNotFoundException() {
+        Mockito.when(repository.findById(Mockito.anyInt()))
+                .thenThrow(new ObjectNotFoundException("Object não encontrado!"));
+
+        try {
+            service.findById(ID);
+        } catch (Exception ex) {
+            assertEquals(ObjectNotFoundException.class, ex.getClass());
+            assertEquals("Object não encontrado!", ex.getMessage());
+        }
+    }
     @Test
     void findAll() {
     }
