@@ -3,6 +3,7 @@ package br.com.praticando.api.service.impl;
 import br.com.praticando.api.domain.User;
 import br.com.praticando.api.domain.dto.UserDTO;
 import br.com.praticando.api.repositories.UserRepository;
+import br.com.praticando.api.service.exceptions.DataIntegratyViolationException;
 import br.com.praticando.api.service.exceptions.ObjectNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -106,7 +107,15 @@ class UserServiceImplTest {
 
     @Test
     void whenCreateThenReturnDataIntegratyViolationException() {
+        Mockito.when(repository.findByEmail(Mockito.anyString())).thenReturn(optionalUser);
 
+        try {
+            optionalUser.get().setId(2);
+            service.create(userDTO);
+        } catch (Exception ex) {
+            assertEquals(DataIntegratyViolationException.class, ex.getClass());
+            assertEquals("E-mail já cadastrado no sistema.", ex.getMessage());
+        }
     }
 
     @Test
