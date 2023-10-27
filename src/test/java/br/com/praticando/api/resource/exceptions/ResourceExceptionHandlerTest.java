@@ -41,6 +41,6 @@ class ResourceExceptionHandlerTest {
     }
 
     @Test
-    void dataIntegratyViolationException() {
+    void dataIntegrityViolationException() {
     }
 }
