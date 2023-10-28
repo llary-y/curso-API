@@ -52,7 +52,7 @@ localhost:8080/user/1
 #### ✒️ Referência: 
 • Valdir Cezar Tutoriais
 <br> <br>
-Obrigada por acessar o repositório. Espero que tenha gostado!👋 <br> <br> ![HaveAnAwesomeDayThumbsUpGIF](https://github.com/llary-y/curso-API/assets/141759410/47f52683-6513-4125-929d-3a4447e8ae03)
+_Obrigada por acessar o repositório. Espero que tenha gostado!_ 👋 <br> <br> ![HaveAnAwesomeDayThumbsUpGIF](https://github.com/llary-y/curso-API/assets/141759410/47f52683-6513-4125-929d-3a4447e8ae03)
 
 
 
